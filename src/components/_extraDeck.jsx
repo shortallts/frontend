@@ -28,9 +28,9 @@ class _ExtraDeck extends React.Component {
             {extradeck.map((card)=>{
                 return (
                 <Image
-                    onMouseEnter ={() => this.props.setFocus(this.props.ExtraDeck[card] ? this.props.ExtraDeck[card] : null)}
+                    onMouseEnter ={() => this.props.setFocus(this.props.extraDeck[card] ? this.props.extraDeck[card] : null)}
                     onClick={()=> this.props.removeDeck(card, "Extra")}  
-                    src={this.state.ExtraDeck[card]!==this.props.ExtraDeck[card] ? this.props.ExtraDeck[card].card_images[0].image_url : Back} 
+                    src={this.state.ExtraDeck[card]!==this.props.extraDeck[card] ? this.props.extraDeck[card].card_images[0].image_url : Back} 
                     style={style} 
                     alt="back" 
                     id={"xd"+card}  

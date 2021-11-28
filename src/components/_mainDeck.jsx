@@ -17,7 +17,7 @@ class _MainDeck extends React.Component {
             margin: 2,
         }
         let maindeck= [];
-        for(let i=0; i<60; i++){
+        for(let i=0; i<60; i++){    
             maindeck.push(i)
         }
         return (
@@ -28,9 +28,9 @@ class _MainDeck extends React.Component {
             {maindeck.map((card)=>{
                 return (
                     <Image
-                        onMouseEnter ={() => this.props.setFocus(this.props.MainDeck[card] ? this.props.MainDeck[card] : null)} 
+                        onMouseEnter ={() => this.props.setFocus(this.props.mainDeck[card] ? this.props.mainDeck[card] : null)} 
                         onClick={()=> this.props.removeDeck(card, "Main")}
-                        src={this.state.MainDeck[card]!==this.props.MainDeck[card] ? this.props.MainDeck[card].card_images[0].image_url : Back} 
+                        src={this.state.MainDeck[card]!==this.props.mainDeck[card] ? this.props.mainDeck[card].card_images[0].image_url : Back} 
                         style={style} 
                         alt="back" 
                         id={"md"+card} 

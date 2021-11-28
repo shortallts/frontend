@@ -58,6 +58,9 @@ class _SearchResults extends React.Component {
         }
     }
     handleLeftClick(card){
+        if(!card){
+            return null;
+        }
         if(card.type==="Fusion Monster" || card.type==="Link Monster" || card.type==="Pendulum Effect Fusion Monster" || card.type==="Synchro Monster" || card.type==="Synchro Pendulum Effect Monster" || card.type==="Synchro Tuner Monster" || card.type==="XYZ Monster" || card.type==="XYZ Pendulum Effect Monster"){
             this.props.addExtraDeck(card)
         }

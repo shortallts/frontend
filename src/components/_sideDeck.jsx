@@ -29,9 +29,9 @@ class _SideDeck extends React.Component {
             {sidedeck.map((card)=>{
                 return (
                     <Image
-                        onMouseEnter ={() => this.props.setFocus(this.props.SideDeck[card] ? this.props.SideDeck[card] : null)} 
+                        onMouseEnter ={() => this.props.setFocus(this.props.sideDeck[card] ? this.props.sideDeck[card] : null)} 
                         onClick={()=> this.props.removeDeck(card, "Side")} 
-                        src={this.state.SideDeck[card]!==this.props.SideDeck[card] ? this.props.SideDeck[card].card_images[0].image_url : Back} 
+                        src={this.state.SideDeck[card]!==this.props.sideDeck[card] ? this.props.sideDeck[card].card_images[0].image_url : Back} 
                         style={style} 
                         alt="back" 
                         id={"sd"+card}  
