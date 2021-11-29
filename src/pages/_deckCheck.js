@@ -1,9 +1,9 @@
 import React from 'react';
 import {Form, Button, Row, Col, Card} from 'react-bootstrap';
 import SearchResults from '../components/_searchResults';
-import mainDeck from '../components/_mainDeck';
-import sideDeck from '../components/_sideDeck';
-import extraDeck from '../components/_extraDeck';
+import MainDeck from '../components/_mainDeck';
+import SideDeck from '../components/_sideDeck';
+import ExtraDeck from '../components/_extraDeck';
 import Focus from '../components/_focus';
 import DeckList from '../components/deckList';
 
@@ -369,7 +369,7 @@ class _DeckCheck extends React.Component {
                     <Col xs={6}>
                         <Card>
                             <Card.Header>Deck Size: ({mainDeckCount}) Monster: ({mainDeckMonsterCount}) Spells: ({mainDeckSpellCount}) Trap: ({mainDeckTrapCount}) </Card.Header>
-                            <mainDeck 
+                            <MainDeck 
                                 mainDeck={this.state.mainDeck}
                                 setFocus={this.setFocus}
                                 removeDeck={this.removeDeck}
@@ -377,7 +377,7 @@ class _DeckCheck extends React.Component {
                         </Card>
                         <Card>
                             <Card.Header>Side Deck Size: ({sideDeckCount}) Monster: ({sideDeckMonsterCount}) Spells: ({sideDeckSpellCount}) Trap: ({sideDeckTrapCount})</Card.Header>
-                            <sideDeck
+                            <SideDeck
                                 sideDeck={this.state.sideDeck} 
                                 setFocus={this.setFocus}
                                 removeDeck={this.removeDeck}
@@ -385,7 +385,7 @@ class _DeckCheck extends React.Component {
                         </Card>
                         <Card>
                             <Card.Header>Extra Deck</Card.Header>
-                            <extraDeck
+                            <ExtraDeck
                                 extraDeck={this.state.extraDeck}
                                 setFocus={this.setFocus}
                                 removeDeck={this.removeDeck}

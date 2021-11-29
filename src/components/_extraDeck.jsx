@@ -2,7 +2,7 @@ import React from 'react'
 import { Image } from 'react-bootstrap';
 import Back from '../images/cardBack.jpg';
 
-class _ExtraDeck extends React.Component {
+class ExtraDeck extends React.Component {
     constructor(props){
         super(props)
         this.state ={
@@ -49,4 +49,4 @@ class _ExtraDeck extends React.Component {
     }
 }
  
-export default _ExtraDeck;
+export default ExtraDeck;
