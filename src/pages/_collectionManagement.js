@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-class _CollectionManagement extends React.Component {
+class CollectionManagement extends React.Component {
     render() { 
         return (
             <Container>
