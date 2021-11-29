@@ -1,10 +1,9 @@
 import React from "react";
 import axios from 'axios';
 import { ButtonGroup, Button, InputGroup, FormControl, Row} from "react-bootstrap";
-
+import config from "../default.json"
 
 class DeckList extends React.Component {
-
     constructor(props){
         super(props)
         this.state ={
@@ -12,11 +11,11 @@ class DeckList extends React.Component {
             saveDeckName: null,
             decks: null,
             selectedDeck: null,
-            DeckServer: 'http://localhost:5000/api/decks'
+            DeckServer: config.server,
         }
     }
     refreshDecks = async () =>{
-        const res = await axios.get('http://localhost:5000/api/decks/');
+        const res = await axios.get(this.state.DeckServer+'api/decks/');
         const data = res.data;
         this.setState({
             decks: res.data
@@ -31,7 +30,7 @@ class DeckList extends React.Component {
     }
     deleteDeckServer = async() =>{
         const _id = this.state.loadedDeckID;
-        const res = await axios.delete('http://localhost:5000/api/decks/'+_id);
+        const res = await axios.delete(this.state.DeckServer+'api/decks/'+_id);
         this.refreshDecks();
         return res;
     }
@@ -40,7 +39,7 @@ class DeckList extends React.Component {
         const Deck = this.props.createDeck();
         const res = axios({
             method: 'post',
-            url: 'http://localhost:5000/api/decks/',
+            url: this.state.DeckServer+'api/decks/',
             data:{
                 name: name,
                 mainDeck: Deck.mainDeck,
@@ -55,7 +54,7 @@ class DeckList extends React.Component {
         const _id = this.state.loadedDeckID;
         axios({
             method: 'get',
-            url: 'http://localhost:5000/api/decks/'+_id,
+            url: this.state.DeckServer+'api/decks/'+_id,
             responseType: 'json'                
         })
             .then((response) =>{

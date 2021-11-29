@@ -11,7 +11,7 @@ import CollectionManagement from './pages/collectionManagement'
 import LookingFor from './pages/lookingfor';
 import DeckCheck from './pages/_deckCheck';
 import { Container } from 'react-bootstrap';
-import {  BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 
 ReactDOM.render(
