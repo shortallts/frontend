@@ -16,7 +16,6 @@ class DeckList extends React.Component {
     }
     refreshDecks = async () =>{
         const res = await axios.get(this.state.DeckServer+'api/decks/');
-        const data = res.data;
         this.setState({
             decks: res.data
         });

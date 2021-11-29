@@ -1,11 +1,10 @@
 import React from 'react';
-import {Form, Button, Row, Col, Card, FormControl, InputGroup, ButtonGroup} from 'react-bootstrap';
-import _SearchResults from '../components/_searchResults';
-import _mainDeck from '../components/_mainDeck';
-import _sideDeck from '../components/_sideDeck';
-import _extraDeck from '../components/_extraDeck';
-import _Focus from '../components/_focus';
-import axios from 'axios';
+import {Form, Button, Row, Col, Card} from 'react-bootstrap';
+import SearchResults from '../components/_searchResults';
+import mainDeck from '../components/_mainDeck';
+import sideDeck from '../components/_sideDeck';
+import extraDeck from '../components/_extraDeck';
+import Focus from '../components/_focus';
 import DeckList from '../components/deckList';
 
 class _DeckCheck extends React.Component {
@@ -58,9 +57,9 @@ class _DeckCheck extends React.Component {
     saveDeckFile = () => {
         const deck = {
             HoveredCard: null,
-            mainDeck: deck.mainDeck,
-            sideDeck: deck.sideDeck,
-            extraDeck: deck.extraDeck,
+            mainDeck: this.mainDeck,
+            sideDeck: this.sideDeck,
+            extraDeck: this.extraDeck,
         }
         const a = document.createElement("a");
         a.href = URL.createObjectURL(new Blob([JSON.stringify(deck, null, 2)], {
@@ -301,7 +300,7 @@ class _DeckCheck extends React.Component {
             <Card>
                 <Row>
                     <Col>
-                        <_Focus 
+                        <Focus 
                             HoveredCard={this.state.HoveredCard}
                         />
                         <Row>
@@ -370,7 +369,7 @@ class _DeckCheck extends React.Component {
                     <Col xs={6}>
                         <Card>
                             <Card.Header>Deck Size: ({mainDeckCount}) Monster: ({mainDeckMonsterCount}) Spells: ({mainDeckSpellCount}) Trap: ({mainDeckTrapCount}) </Card.Header>
-                            <_mainDeck 
+                            <mainDeck 
                                 mainDeck={this.state.mainDeck}
                                 setFocus={this.setFocus}
                                 removeDeck={this.removeDeck}
@@ -378,7 +377,7 @@ class _DeckCheck extends React.Component {
                         </Card>
                         <Card>
                             <Card.Header>Side Deck Size: ({sideDeckCount}) Monster: ({sideDeckMonsterCount}) Spells: ({sideDeckSpellCount}) Trap: ({sideDeckTrapCount})</Card.Header>
-                            <_sideDeck
+                            <sideDeck
                                 sideDeck={this.state.sideDeck} 
                                 setFocus={this.setFocus}
                                 removeDeck={this.removeDeck}
@@ -386,7 +385,7 @@ class _DeckCheck extends React.Component {
                         </Card>
                         <Card>
                             <Card.Header>Extra Deck</Card.Header>
-                            <_extraDeck
+                            <extraDeck
                                 extraDeck={this.state.extraDeck}
                                 setFocus={this.setFocus}
                                 removeDeck={this.removeDeck}
@@ -395,7 +394,7 @@ class _DeckCheck extends React.Component {
                     </Col>
 
                     <Col >
-                        <_SearchResults 
+                        <SearchResults 
                             setFocus={this.setFocus}
                             addMainDeck={this.addMainDeck}
                             addExtraDeck={this.addExtraDeck}
